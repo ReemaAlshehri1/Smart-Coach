@@ -15,7 +15,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 import json
 
-# استخدام نموذج خفيف من هاجينغ فيس (يمكن تغييره إذا كنت تستخدم موديل آخر)
+
 model_name = "distilgpt2"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(
@@ -24,17 +24,17 @@ model = AutoModelForCausalLM.from_pretrained(
     torch_dtype=torch.float16
 )
 
-# تحميل بيانات المشاعر لكل لاعب
+
 with open('/content/Final_report_named.json', 'r') as f:
     emotion_data = json.load(f)
 
-# توليد تقييم نفسي لكل لاعب
+
 player_feedbacks = {}
 
 for player_name, data in emotion_data.items():
     readings = data.get("emotion_readings", [])
 
-    # إزالة التكرارات وتحجيم عدد الإدخالات لتكون متنوعة
+ 
     seen = set()
     filtered = []
     for r in readings:
@@ -45,10 +45,10 @@ for player_name, data in emotion_data.items():
         if len(filtered) >= 20:
             break
 
-    # توليد سلسلة المشاعر
+
     sequence = ", ".join([f"{r['time']}s: {r['emotion']}" for r in filtered]) or "No emotional data available"
 
-    # برومبت واضح لتوجيه النموذج بشكل منطقي
+
     prompt = (
         f"You are a professional sports psychologist. Based on the emotional timeline of player '{player_name}', "
         "write a meaningful psychological report that describes their emotional state, behavioral patterns, and mental resilience.\n\n"
@@ -75,7 +75,7 @@ for player_name, data in emotion_data.items():
     except Exception as e:
         player_feedbacks[player_name] = f"[ERROR] Failed to generate: {str(e)}"
 
-# طباعة كل التقييمات النهائية
+
 print("\n🧠 Psychological Evaluations:\n")
 for name, feedback in player_feedbacks.items():
     print(f"--- Evaluation for {name} ---")
