@@ -21,7 +21,7 @@ AI League Hackathon by Sky & Tuwaiq Academy
 - LLM_feedback.py: Generates a player psychological feedback using local LLM.
 
 ## Download the emotion Trained Model
-You can download the trained model from [Google Drive]((https://drive.google.com/file/d/1EBeqwMV4Vf_LlaFmW22PNjukdUYjOcXh/view?usp=sharing)).
+You can download the trained model from [Google Drive](https://drive.google.com/file/d/1EBeqwMV4Vf_LlaFmW22PNjukdUYjOcXh/view?usp=sharing).
 
  ## 📄 License
 This project is not licensed for public use. All rights are reserved by the author.  
