@@ -37,7 +37,7 @@ from torchvision import models
 
 model = models.resnet18(weights=None)
 model.fc = torch.nn.Linear(model.fc.in_features, 7)
-model.load_state_dict(torch.load('/content/emotion_model.pth', map_location='cpu'))  # <-- غيّر المسار إذا لزم
+model.load_state_dict(torch.load('/content/emotion_model.pth', map_location='cpu'))    
 model.eval()
 
 emotion_map = ["Stress", "Anger", "Frustration", "Happiness", "Surprise", "Focus", "Neutral"]
