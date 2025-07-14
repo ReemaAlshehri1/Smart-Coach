@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/11qZyWu-fNOp8jR9KPpuCwF6NvD8PSAa1
 """
 
-!unzip -q /content/Final1_dataset.zip -d /content/unzipped1_folder
+!unzip -q /content/faces_dataset.zip -d /content/unzipped1_folder
 
 """# build the model"""
 
