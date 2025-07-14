@@ -27,10 +27,10 @@ def is_valid_file(path):
     except Exception:
         return False
 
-# ✅ 1. Set up dataset path (organized by class folders)
-data_dir = '/content/unzipped1_folder'  # replace with your cleaned dataset path
+#  1. Set up dataset path (organized by class folders)
+data_dir = '/content/unzipped1_folder'  # replace with faces dataset
 
-# ✅ 2. Define image transforms (must match model input requirements)
+#  2. Define image transforms (must match model input requirements)
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.RandomHorizontalFlip(),
@@ -40,11 +40,11 @@ transform = transforms.Compose([
                          std=[0.229, 0.224, 0.225])
 ])
 
-# ✅ 3. Load dataset (should be in folders by class name)
+# 3. Load dataset (should be in folders by class name)
 # Add is_valid_file to skip invalid files
 dataset = datasets.ImageFolder(root=data_dir, transform=transform, is_valid_file=is_valid_file)
 
-# ✅ 4. Split dataset into training and validation
+#  4. Split dataset into training and validation
 train_size = int(0.8 * len(dataset))
 val_size = len(dataset) - train_size
 train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
@@ -52,20 +52,20 @@ train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
 train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False)
 
-# ✅ 5. Load pretrained ResNet18 and modify classifier
+#  5. Load pretrained ResNet18 and modify classifier
 model = models.resnet18(pretrained=True)
 num_features = model.fc.in_features
 model.fc = nn.Linear(num_features, len(dataset.classes))  # Automatically adapts to your classes
 
-# ✅ 6. Move model to GPU if available
+# 6. Move model to GPU if available
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 
-# ✅ 7. Set loss function and optimizer
+#  7. Set loss function and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.0001)
 
-# ✅ 8. Train the model
+# 8. Train the model
 epochs = 10
 for epoch in range(epochs):
     model.train()
@@ -84,11 +84,11 @@ for epoch in range(epochs):
 
     print(f"[Epoch {epoch+1}/{epochs}] Training Loss: {running_loss / len(train_loader):.4f}")
 
-# ✅ 9. Save model
+# 9. Save model
 torch.save(model.state_dict(), 'emotion_model.pth')
-print("\n✅ Model training complete and saved as 'emotion_model.pth'")
+print("\nModel training complete and saved as 'emotion_model.pth'")
 
-# ✅ 10. Print class labels for future reference
+#  10. Print class labels for future reference
 print("Class labels:", dataset.classes)
 
 """# Evaluate the model"""
