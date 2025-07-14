@@ -1,6 +1,6 @@
 # Smart-Coach
 This project aims to support football coaches in making better decisions by automatically analyzing players’ emotions and physical movements from match videos.  It uses AI models to detect facial emotions and track each player’s speed, direction, and position over time. Then, it combines both  data to generate  psychological  insights by LLM.
-### 🔍 Built With:
+###  Built With:
 - Python
 - OpenCV
 - PyTorch
@@ -9,10 +9,10 @@ This project aims to support football coaches in making better decisions by auto
 - ResNet18
 - Google Colab
 
-### 🏆 Built During:
+###  Built During:
 AI League Hackathon by Sky & Tuwaiq Academy
 
-### 📂 Files:
+### Files:
 - Faces_dataset.zip: A Custom labeled dataset containing facial images of football plyers and corresponding emotion labels used for training.
 - model.py: trains A custom emotion classification model (based on pretrained resnet18) on a manually collected dataset of football plyers' facial expressions.
 - emotion_model.pth: The trained model.
@@ -23,6 +23,6 @@ AI League Hackathon by Sky & Tuwaiq Academy
 ## Download the emotion Trained Model
 You can download the trained model from [Google Drive](https://drive.google.com/file/d/1EBeqwMV4Vf_LlaFmW22PNjukdUYjOcXh/view?usp=sharing).
 
- ## 📄 License
+ ##  License
 This project is not licensed for public use. All rights are reserved by the author.  
 You may not copy, distribute, or modify this project without explicit permission.
