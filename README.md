@@ -25,26 +25,33 @@ You can download the trained model from [Google Drive](https://drive.google.com/
 
 ## How to run
 
-1- Clone the repository:
+How to Run
+
+Clone the repository
 git clone https://github.com/reema13548/Smart-Coach.git
 cd Smart-Coach
-2-Install required dependencies:
+Install required dependencies
 pip install -r requirements.txt
-3-Download the trained emotion recognition model given below.
-Ensure emotion_model.pth is saved locally.
-4-Set your football match video URL In vedio_processing.py:
+Download the trained emotion recognition model
+Ensure that emotion_model.pth is saved locally in your project folder.
+Set your football match video URL
+In vedio_processing.py, replace the line that defines video_url with your match video link.
+Example:
 video_url = "https://your_match_video_link_here"
-5-Set the model path in the vedio_processing.py:
+Set the model path in vedio_processing.py
+Update the line that loads the model with the path to your .pth file.
+Example:
 model.load_state_dict(torch.load('path_to/emotion_model.pth', map_location='cpu'))
-6-Run the processing pipeline:
-python vedio_processing.py
-7-Assign names to detected players
-The script will show player images. Enter a name when prompted by Track ID.
+Run the processing pipeline
+Run vedio_processing.py to process the video, detect faces, track players, and classify emotions.
+Assign names to detected players
+The script will show player images. Enter a name when prompted for each Track ID.
 A final report will be saved as Final_report_named.json.
-8-Run the llm_feedback script:
-python llm_feedback.py
-9-View Output
-The script will print psychological evaluations for each player based on their emotional timeline and physical info.
+Run the LLM feedback generation script
+Run llm_feedback.py to generate psychological evaluations for each player.
+View output
+The script will print psychological evaluations for each player based on their emotional timeline and physical movement data.
+
 
 
  ##  License
