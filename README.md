@@ -26,7 +26,7 @@ You can download the trained model from [Google Drive](https://drive.google.com/
 ## How to run
 
 
-1. Clone the repository
+1. Clone the repository:
 git clone https://github.com/reema13548/Smart-Coach.git
 cd Smart-Coach
 2. Install required dependencies
