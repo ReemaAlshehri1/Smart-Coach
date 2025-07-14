@@ -23,6 +23,30 @@ AI League Hackathon by Sky & Tuwaiq Academy
 ## Download the emotion Trained Model
 You can download the trained model from [Google Drive](https://drive.google.com/file/d/1EBeqwMV4Vf_LlaFmW22PNjukdUYjOcXh/view?usp=sharing).
 
+## How to run
+
+1- Clone the repository:
+git clone https://github.com/reema13548/Smart-Coach.git
+cd Smart-Coach
+2-Install required dependencies:
+pip install -r requirements.txt
+3-Download the trained emotion recognition model given below.
+Ensure emotion_model.pth is saved locally.
+4-Set your football match video URL In vedio_processing.py:
+video_url = "https://your_match_video_link_here"
+5-Set the model path in the vedio_processing.py:
+model.load_state_dict(torch.load('path_to/emotion_model.pth', map_location='cpu'))
+6-Run the processing pipeline:
+python vedio_processing.py
+7-Assign names to detected players
+The script will show player images. Enter a name when prompted by Track ID.
+A final report will be saved as Final_report_named.json.
+8-Run the llm_feedback script:
+python llm_feedback.py
+9-View Output
+The script will print psychological evaluations for each player based on their emotional timeline and physical info.
+
+
  ##  License
 This project is not licensed for public use. All rights are reserved by the author.  
 You may not copy, distribute, or modify this project without explicit permission.
