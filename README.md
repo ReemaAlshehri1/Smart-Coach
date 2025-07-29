@@ -28,18 +28,18 @@ You can download the trained model from [Google Drive](https://drive.google.com/
 
 1. Clone the repository:
    ```bash
-git clone https://github.com/ReemaAlshehri1/Smart-Coach.git
-cd Smart-Coach
+   git clone https://github.com/ReemaAlshehri1/Smart-Coach.git
+   cd Smart-Coach
 2. Install required dependencies:
-    ```bash
-pip install -r requirements.txt
-3. Download the trained emotion recognition model
+   ```bash
+   pip install -r requirements.txt
+3. Download the trained emotion recognition model:
 Ensure that emotion_model.pth is saved locally in your project folder.
-4. Set your football match video URL
+4. Set your football match video URL:
 In vedio_processing.py, replace the line that defines video_url with your match video link.
 Example:
 video_url = "https://your_match_video_link_here"
-5. Set the model path in vedio_processing.py
+5. Set the model path in vedio_processing.py:
 Update the line that loads the model with the path to your .pth file.
 Example:
 model.load_state_dict(torch.load('path_to/emotion_model.pth', map_location='cpu'))
