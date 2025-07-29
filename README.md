@@ -27,9 +27,11 @@ You can download the trained model from [Google Drive](https://drive.google.com/
 
 
 1. Clone the repository:
-git clone https://github.com/reema13548/Smart-Coach.git
+   ```bash
+git clone https://github.com/ReemaAlshehri1/Smart-Coach.git
 cd Smart-Coach
-2. Install required dependencies
+2. Install required dependencies:
+    ```bash
 pip install -r requirements.txt
 3. Download the trained emotion recognition model
 Ensure that emotion_model.pth is saved locally in your project folder.
