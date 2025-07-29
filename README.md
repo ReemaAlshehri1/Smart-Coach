@@ -34,7 +34,7 @@ You can download the trained model from [Google Drive](https://drive.google.com/
    ```bash
    pip install -r requirements.txt
 3. Download the trained emotion recognition model:
-Ensure that emotion_model.pth is saved locally in your project folder.
+   Ensure that emotion_model.pth is saved locally in your project folder.
 4. Set your football match video URL:
 In vedio_processing.py, replace the line that defines video_url with your match video link.
 Example:
