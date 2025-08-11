@@ -48,8 +48,8 @@ Run llm_feedback.py to generate psychological evaluations for each player.
 The script will print psychological evaluations for each player based on their emotional timeline and physical movement data.
 
 
-###GitHub structure
-Smart_Coach/
+## GitHub structure
+<pre> Smart_Coach/
 ├── model.py                # Trains custom emotion classifier (ResNet18) on faces dataset
 ├── video_processing.py     # Processes match videos, tracks players, classifies emotions & extracts physical stats
 ├── llm_feedback.py         # Generates psychological feedback for each player using local LLM
@@ -58,7 +58,7 @@ Smart_Coach/
 ├── Final_report_named.json # Example JSON report from video processing
 ├── sample_video.mp4        # (Optional) short demo video clip
 ├── requirements.txt        # List of dependencies to install
-└── README.md               # Project documentation
+└── README.md               # Project documentation </pre>
 
 
   
