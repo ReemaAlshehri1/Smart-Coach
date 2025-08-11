@@ -49,16 +49,15 @@ The script will print psychological evaluations for each player based on their e
 
 
 ## GitHub structure
-<pre> Smart_Coach/
-├── model.py                # Trains custom emotion classifier (ResNet18) on faces dataset
-├── video_processing.py     # Processes match videos, tracks players, classifies emotions & extracts physical stats
-├── llm_feedback.py         # Generates psychological feedback for each player using local LLM
-├── Faces_dataset.zip       # Labeled facial images of football players and emotion labels
-├── emotion_model.pth       # Trained emotion classification model
-├── Final_report_named.json # Example JSON report from video processing
-├── sample_video.mp4        # (Optional) short demo video clip
-├── requirements.txt        # List of dependencies to install
-└── README.md               # Project documentation </pre>
+ Smart_Coach/
+- `model.py`                # Trains custom emotion classifier (ResNet18) on faces dataset
+- `video_processing.py`     # Processes match videos, tracks players, classifies emotions & extracts physical stats
+- `llm_feedback.py`         # Generates psychological feedback for each player using local LLM
+- `Faces_dataset.zip`       # Labeled facial images of football players and emotion labels
+- `emotion_model.pth`       # Trained emotion classification model
+- `Final_report_named.json` # Example JSON report from video processing
+- `requirements.txt`        # List of dependencies to install
+- `README.md `              # Project documentation </pre>
 
 
   
